@@ -28,7 +28,7 @@ public class Receitas {
 
 	@Override
 	public String toString() {
-		return "Receitas [Produto=" + Produto + ", Quantidade=" + Quantidade + "]";
+		return "Receitas [Produto=" + Produto + ", Quantidade=" + Quantidade + "];";
 	}
 	
 	
