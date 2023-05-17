@@ -73,8 +73,7 @@ public class Lojas {
 
 	@Override
 	public String toString() {
-		return "Lojas [Nome=" + Nome + ", Descrição=" + Descrição + ", Morada=" + Morada + ", Dias=" + Dias
-				+ ", HorarioAbertura=" + HorarioAbertura + ", HorarioFecho=" + HorarioFecho + "]";
+		return "Lojas [Nome= " + Nome + " , Descricao= " + Descrição + " , Morada=" + Morada + ", Dias= " + Dias + " , HorarioAbertura= " + HorarioAbertura + " , HorarioFecho= " + HorarioFecho + " ]";
 	}
 
 
