@@ -8,7 +8,7 @@ public class Produtos {
 	ArrayList<Receitas> Receitas;
 	String ModoConfecao;
 	public Produtos(String nome, String descrição, ArrayList<trabalho.Receitas> receitas, String modoConfecao) {
-		super();
+		
 		Nome = nome;
 		Descrição = descrição;
 		Receitas = new ArrayList<Receitas>(20);
