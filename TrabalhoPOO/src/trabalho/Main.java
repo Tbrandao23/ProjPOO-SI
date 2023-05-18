@@ -19,8 +19,14 @@ public class Main {
 		Gerir Gestor = new Gerir();
 		Gestor.adicionarPais("Portugal", "Ola");
 		Gestor.adicionarPais("Holanda", "Hallo");
-		Gestor.adicionarPais("França", "Bonjour");
+		Gestor.adicionarPais("Franca", "Bonjour");
+		Gestor.adicionarRegiao("Ovar", "Bom pao de lo ", "Portugal");
+		Gestor.adicionarRegiao("Paris", "Bom pao de baguete", "Franca");
+		Gestor.adicionarRegiao("Amesterdao", "Bom pao", "Holanda");
+		Gestor.adicionarProduto("Pao de lo", "Belo bolo", "1 colher de sopa", "Portugal", "Ovar");
 		System.out.println(Gestor.listaPaises);
 		Gestor.adicionarPais("Portugal", "123");
+		Gestor.adicionarRegiao("Ovar", "Ex pao de lo ", "Portugal");
+		Gestor.adicionarProduto("Pao de lo", "Belo bolo", "1 colher de sopa", "Portugal", "Ovar");
 	}
 }

@@ -5,7 +5,7 @@ import java.time.LocalTime;
 
 public class Lojas {
 	String Nome;
-	String Descrição; 
+	String Descricao; 
 	String Morada; 
 	String Dias;
 	LocalTime HorarioAbertura;
@@ -14,7 +14,7 @@ public class Lojas {
 	public Lojas(String nome, String descrição, String morada, String dias,LocalTime HA, LocalTime HF) {
 	
 		Nome = nome;
-		Descrição = descrição;
+		Descricao = descrição;
 		Morada = morada;
 		Dias = dias;
 		HorarioAbertura = HA;
@@ -29,12 +29,12 @@ public class Lojas {
 		Nome = nome;
 	}
 
-	public String getDescrição() {
-		return Descrição;
+	public String getDescricao() {
+		return Descricao;
 	}
 
-	public void setDescrição(String descrição) {
-		Descrição = descrição;
+	public void setDescricao(String descrição) {
+		Descricao = descrição;
 	}
 
 	public String getMorada() {
@@ -73,7 +73,7 @@ public class Lojas {
 
 	@Override
 	public String toString() {
-		return "Lojas [Nome= " + Nome + " , Descricao= " + Descrição + " , Morada=" + Morada + ", Dias= " + Dias + " , HorarioAbertura= " + HorarioAbertura + " , HorarioFecho= " + HorarioFecho + " ]";
+		return "Lojas [Nome= " + Nome + " , Descricao= " + Descricao + " , Morada=" + Morada + ", Dias= " + Dias + " , HorarioAbertura= " + HorarioAbertura + " , HorarioFecho= " + HorarioFecho + " ]";
 	}
 
 

@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class Produtos {
 	String Nome; 
-	String Descrição; 
+	String Descricao; 
 	ArrayList<Receitas> Receitas;
 	ArrayList<Lojas> Lojas;
 	String ModoConfecao;
-	public Produtos(String nome, String descrição, ArrayList<trabalho.Receitas> receitas, String modoConfecao) {
+	public Produtos(String nome, String descrição,String modoConfecao) {
 		
 		Nome = nome;
-		Descrição = descrição;
+		Descricao = descrição;
 		Receitas = new ArrayList<Receitas>(20);
 		Lojas = new ArrayList<Lojas>(20);
 		ModoConfecao = modoConfecao;
@@ -24,10 +24,10 @@ public class Produtos {
 		Nome = nome;
 	}
 	public String getDescrição() {
-		return Descrição;
+		return Descricao;
 	}
 	public void setDescrição(String descrição) {
-		Descrição = descrição;
+		Descricao = descrição;
 	}
 	public ArrayList<Receitas> getReceitas() {
 		return Receitas;
@@ -50,7 +50,7 @@ public class Produtos {
 
 	@Override
 	public String toString() {
-		return "Produtos [Nome= " + Nome + " , Descrição= " + Descrição + " , Receitas= " + Receitas + " , Lojas= " + Lojas + " , ModoConfecao= " + ModoConfecao + " ]";
+		return "Produtos [Nome= " + Nome + " , Descricao= " + Descricao + " , Receitas= " + Receitas + " , Lojas= " + Lojas + " , ModoConfecao= " + ModoConfecao + " ]";
 	} 
 	
 	

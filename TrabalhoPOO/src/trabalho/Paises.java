@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Paises {
 	
 	String Nome;
-	String Descrição;
+	String Descricao;
 	ArrayList<Regioes> Regioes ;
 	
 	
@@ -14,7 +14,7 @@ public class Paises {
 	public Paises(String nome, String descrição) {
 		
 		Nome = nome;
-		Descrição = descrição;
+		Descricao = descrição;
 		Regioes = new ArrayList<Regioes>(20);
 	}
 	
@@ -24,11 +24,11 @@ public class Paises {
 	public void setNome(String nome) {
 		Nome = nome;
 	}
-	public String getDescrição() {
-		return Descrição;
+	public String getDescricao() {
+		return Descricao;
 	}
-	public void setDescrição(String descrição) {
-		Descrição = descrição;
+	public void setDescricao(String descrição) {
+		Descricao = descrição;
 	}
 	public ArrayList<Regioes> getRegioes() {
 		return Regioes;
@@ -39,7 +39,7 @@ public class Paises {
 
 	@Override
 	public String toString() {
-		return "Paises [Nome= " + Nome + " , Descrição= " + Descrição + " , Regioes= " + Regioes + " ]";
+		return "Paises [Nome= " + Nome + " , Descricao= " + Descricao + " , Regioes= " + Regioes + " ]";
 	}
 	
 	
