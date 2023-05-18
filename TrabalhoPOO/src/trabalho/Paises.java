@@ -12,7 +12,7 @@ public class Paises {
 	
 	
 	public Paises(String nome, String descrição) {
-		super();
+		
 		Nome = nome;
 		Descrição = descrição;
 		Regioes = new ArrayList<Regioes>(20);

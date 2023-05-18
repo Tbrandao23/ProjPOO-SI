@@ -9,7 +9,7 @@ public class Regioes {
 	
 	
 	public Regioes(String nome, String descrição) {
-		super();
+		
 		Nome = nome;
 		Descrição = descrição;
 		Produtos_da_Regiao = new ArrayList<Produtos>(20);
