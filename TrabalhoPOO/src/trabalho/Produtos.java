@@ -50,6 +50,14 @@ public class Produtos {
 		ModoConfecao = modoConfecao;
 	}
 
+	public String getAssociacoes() {
+		return Associacoes;
+	}
+
+	public void setAssociacoes(String associacoes) {
+		Associacoes = associacoes;
+	}
+
 	@Override
 	public String toString() {
 		return "Produtos [Nome= " + Nome + " , Descricao= " + Descricao + " , Receitas= " + Receitas + " , Lojas= " + Lojas + " , ModoConfecao= " + ModoConfecao + " , Associacao= " + Associacoes+ " ]";

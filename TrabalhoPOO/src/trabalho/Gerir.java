@@ -54,6 +54,8 @@ public class Gerir {
 					}
 			}
 		
+		}else {
+			System.out.println("Pais nao existe.");
 		}
 	}
 	
@@ -82,7 +84,11 @@ public class Gerir {
 						System.out.println("Produto ja existe. " + nome);
 					}
 				}				
-			}				
+			}else {
+				System.out.println("Regiao nao existe.");
+			}
+		}else {
+			System.out.println("Pais nao existe.");
 		}
 	}
 	
@@ -119,10 +125,16 @@ public class Gerir {
 						}
 						
 					}
+				}else {
+					System.out.println("Produto nao existe.");
 				}
 				
-				}				
-			}				
+				}else {
+					System.out.println("Regiao nao existe.");
+				}
+			}else {
+				System.out.println("Pais nao existe.");
+			}
 		}
 	
 	public void adicionarReceita (String prod, int quant,String nomeP,String nomeR, String nomeProd ) {
@@ -156,10 +168,47 @@ public class Gerir {
 						}
 						
 					}
+				}else {
+					System.out.println("Produto nao existe.");
 				}
 				
-				}				
-			}				
+				}else {
+					System.out.println("Regiao nao existe.");
+				}
+			}else {
+				System.out.println("Pais nao existe.");
+			}
 		}
+	
+	public void atualizarProd (String nomeP,String nomeR, String nomeProd,String newNome,String newDesc,String newConf,String newAss) {
+		int i = 0;
+		int j = 0;
+		int x = 0;
+		while (i < listaPaises.size() && nomeP != listaPaises.get(i).getNome()) {
+			i++;
+		}
+		if (i < listaPaises.size()) {
+			while (j < listaPaises.get(i).Regioes.size() && nomeR != listaPaises.get(i).Regioes.get(j).getNome()) {
+				j++;
+			}
+			if(j < listaPaises.get(i).Regioes.size()) {
+				while(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size() && nomeProd != listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).getNome()) {
+					x++;
+				}
+				if(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
+					 listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).setNome(newNome);
+					 listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).setDescrição(newDesc);
+					 listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).setModoConfecao(newConf);
+					 listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).setAssociacoes(newAss);
+				}else {
+					System.out.println("Produto nao existe.");
+				}
+			}else {
+				System.out.println("Regiao nao existe.");
+			}
+		}else {
+			System.out.println("Pais nao existe.");
+		}
+	}
 	
 }
