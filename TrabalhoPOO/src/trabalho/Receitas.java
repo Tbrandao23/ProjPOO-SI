@@ -2,9 +2,9 @@ package trabalho;
 
 public class Receitas {
 	String Produto;
-	String Quantidade;
+	int Quantidade;
 	
-	public Receitas(String produto, String quantidade) {
+	public Receitas(String produto,int quantidade) {
 		
 		Produto = produto;
 		Quantidade = quantidade;
@@ -18,11 +18,11 @@ public class Receitas {
 		Produto = produto;
 	}
 
-	public String getQuantidade() {
+	public int getQuantidade() {
 		return Quantidade;
 	}
 
-	public void setQuantidade(String quantidade) {
+	public void setQuantidade(int quantidade) {
 		Quantidade = quantidade;
 	}
 

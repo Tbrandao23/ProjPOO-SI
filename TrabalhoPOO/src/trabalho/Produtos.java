@@ -8,13 +8,15 @@ public class Produtos {
 	ArrayList<Receitas> Receitas;
 	ArrayList<Lojas> Lojas;
 	String ModoConfecao;
-	public Produtos(String nome, String descrição,String modoConfecao) {
+	String Associacoes;
+	public Produtos(String nome, String descrição,String modoConfecao,String associacoes) {
 		
 		Nome = nome;
 		Descricao = descrição;
 		Receitas = new ArrayList<Receitas>(20);
 		Lojas = new ArrayList<Lojas>(20);
 		ModoConfecao = modoConfecao;
+		Associacoes = associacoes;
 	}
 	
 	public String getNome() {
@@ -50,7 +52,7 @@ public class Produtos {
 
 	@Override
 	public String toString() {
-		return "Produtos [Nome= " + Nome + " , Descricao= " + Descricao + " , Receitas= " + Receitas + " , Lojas= " + Lojas + " , ModoConfecao= " + ModoConfecao + " ]";
+		return "Produtos [Nome= " + Nome + " , Descricao= " + Descricao + " , Receitas= " + Receitas + " , Lojas= " + Lojas + " , ModoConfecao= " + ModoConfecao + " , Associacao= " + Associacoes+ " ]";
 	} 
 	
 	
