@@ -18,7 +18,7 @@ public class Gerir {
 		if(listaPaises.isEmpty()) {
 			listaPaises.add(newPais);
 		}else {
-			while(i < listaPaises.size() && newPais.getNome() != listaPaises.get(i).getNome()) {
+			while(i < listaPaises.size() && nome.compareTo(listaPaises.get(i).getNome())!= 0 ) {
 				i++;
 			}
 			if(i >= listaPaises.size()) {
@@ -35,19 +35,19 @@ public class Gerir {
 		Regioes newReg = new Regioes(nome,desc);
 		int j = 0;
 		int i = 0;
-		while (i < listaPaises.size() && listaPaises.get(i).getNome() != nomeP) {
+		while (i < listaPaises.size() && nomeP.compareTo(listaPaises.get(i).getNome()) != 0) {
 			i++;
 		}
-		if (i < listaPaises.size()) {
+		if (i <= listaPaises.size() ) {
 			
 			if(listaPaises.get(i).Regioes.isEmpty()) {
 					listaPaises.get(i).Regioes.add(newReg);
 				
 			}else {
-					while(j < listaPaises.get(i).Regioes.size() && newReg.getNome() != listaPaises.get(i).Regioes.get(j).getNome()) {
+					while(j < listaPaises.get(i).Regioes.size() && nome.compareTo(listaPaises.get(i).Regioes.get(j).getNome()) != 0) {
 						j++;
 					}
-					if(j > listaPaises.get(i).Regioes.size()) {
+					if(j >= listaPaises.get(i).Regioes.size()) {
 						listaPaises.get(i).Regioes.add(newReg);
 					}else {
 						System.out.println("Regiao ja existe. " + nome);
@@ -64,18 +64,18 @@ public class Gerir {
 		int j = 0;
 		int i = 0;
 		int k = 0;
-		while (i < listaPaises.size() && listaPaises.get(i).getNome() != nomeP) {
+		while (i < listaPaises.size() && nomeP.compareTo(listaPaises.get(i).getNome()) != 0) {
 			i++;
 		}
-		if (i < listaPaises.size()) {
-			while (j < listaPaises.get(i).Regioes.size() && listaPaises.get(i).Regioes.get(j).getNome() != nomeR ) {
+		if (i <= listaPaises.size()) {
+			while (j < listaPaises.get(i).Regioes.size() && nomeR.compareTo(listaPaises.get(i).Regioes.get(j).getNome()) != 0 ) {
 				j++;
 			}
-			if(j < listaPaises.get(i).Regioes.size()) {
+			if(j <= listaPaises.get(i).Regioes.size()) {
 				if(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.isEmpty()) {
 					listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.add(newProd);
 				}else {
-					while(k < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size() && nome != listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).getNome()) {
+					while(k < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size() && nome.compareTo(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).getNome()) != 0) {
 						k++;
 					}
 					if(k > listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
@@ -100,22 +100,22 @@ public class Gerir {
 		int i = 0;
 		int k = 0;
 		int x = 0; 
-		while (i < listaPaises.size() && listaPaises.get(i).getNome() != nomeP) {
+		while (i < listaPaises.size() &&   nomeP.compareTo(listaPaises.get(i).getNome()) != 0) {
 			i++;
 		}
-		if (i < listaPaises.size()) {
-			while (j < listaPaises.get(i).Regioes.size() && listaPaises.get(i).Regioes.get(j).getNome() != nomeR ) {
+		if (i <= listaPaises.size()) {
+			while (j < listaPaises.get(i).Regioes.size() &&   nomeR.compareTo(listaPaises.get(i).Regioes.get(j).getNome()) != 0 ) {
 				j++;
 			}
-			if(j < listaPaises.get(i).Regioes.size()) {
-				while(k < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size() && nomeProd != listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).getNome()) {
+			if(j <= listaPaises.get(i).Regioes.size()) {
+				while(k < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size() && nomeProd.compareTo(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).getNome()) != 0) {
 					k++;
 				}
-				if (k < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
+				if (k <= listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
 					if(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Lojas.isEmpty()) {
 						listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Lojas.add(newLoja);
 					}else {
-						while(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Lojas.size() && nome != listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Lojas.get(x).getNome()) {
+						while(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Lojas.size() && nome.compareTo(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Lojas.get(x).getNome()) != 0) {
 							x++;
 						}
 						if(k > listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Lojas.size()) {
@@ -137,28 +137,29 @@ public class Gerir {
 			}
 		}
 	
-	public void adicionarReceita (String prod, int quant,String nomeP,String nomeR, String nomeProd ) {
-		Receitas newReceita = new Receitas (prod,quant);
+	public void adicionarReceita (String prod, String quant,String nomeP,String nomeR, String nomeProd ) {
+		int quantidade = Integer.parseInt(quant);
+		Receitas newReceita = new Receitas (prod,quantidade);
 		int j = 0;
 		int i = 0;
 		int k = 0;
 		int x = 0; 
-		while (i < listaPaises.size() && listaPaises.get(i).getNome() != nomeP) {
+		while (i < listaPaises.size() &&  nomeP.compareTo(listaPaises.get(i).getNome()) != 0) {
 			i++;
 		}
-		if (i < listaPaises.size()) {
-			while (j < listaPaises.get(i).Regioes.size() && listaPaises.get(i).Regioes.get(j).getNome() != nomeR ) {
+		if (i <= listaPaises.size()) {
+			while (j < listaPaises.get(i).Regioes.size() &&  nomeR.compareTo(listaPaises.get(i).Regioes.get(j).getNome()) != 0 ) {
 				j++;
 			}
-			if(j < listaPaises.get(i).Regioes.size()) {
-				while(k < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size() && nomeProd != listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).getNome()) {
+			if(j <= listaPaises.get(i).Regioes.size()) {
+				while(k < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size() && nomeProd.compareTo(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).getNome()) != 0) {
 					k++;
 				}
-				if (k < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
+				if (k <= listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
 					if(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Receitas.isEmpty()) {
 						listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Receitas.add(newReceita);
 					}else {
-						while(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Receitas.size() && prod != listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Receitas.get(x).getProduto()) {
+						while(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Receitas.size() && prod.compareTo(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Receitas.get(x).getProduto()) != 0) {
 							x++;
 						}
 						if(x >= listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Receitas.size()) {
@@ -184,18 +185,18 @@ public class Gerir {
 		int i = 0;
 		int j = 0;
 		int x = 0;
-		while (i < listaPaises.size() && nomeP != listaPaises.get(i).getNome()) {
+		while (i < listaPaises.size() && nomeP.compareTo(listaPaises.get(i).getNome()) != 0) {
 			i++;
 		}
-		if (i < listaPaises.size()) {
-			while (j < listaPaises.get(i).Regioes.size() && nomeR != listaPaises.get(i).Regioes.get(j).getNome()) {
+		if (i <= listaPaises.size()) {
+			while (j < listaPaises.get(i).Regioes.size() && nomeR.compareTo(listaPaises.get(i).Regioes.get(j).getNome()) != 0) {
 				j++;
 			}
-			if(j < listaPaises.get(i).Regioes.size()) {
-				while(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size() && nomeProd != listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).getNome()) {
+			if(j <= listaPaises.get(i).Regioes.size()) {
+				while(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size() && nomeProd.compareTo(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).getNome()) != 0 ) {
 					x++;
 				}
-				if(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
+				if(x <= listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
 					 listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).setNome(newNome);
 					 listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).setDescrição(newDesc);
 					 listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).setModoConfecao(newConf);
