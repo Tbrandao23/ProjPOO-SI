@@ -38,7 +38,7 @@ public class Gerir {
 		while (i < listaPaises.size() && nomeP.compareTo(listaPaises.get(i).getNome()) != 0) {
 			i++;
 		}
-		if (i <= listaPaises.size() ) {
+		if (i < listaPaises.size() ) {
 			
 			if(listaPaises.get(i).Regioes.isEmpty()) {
 					listaPaises.get(i).Regioes.add(newReg);
@@ -67,11 +67,11 @@ public class Gerir {
 		while (i < listaPaises.size() && nomeP.compareTo(listaPaises.get(i).getNome()) != 0) {
 			i++;
 		}
-		if (i <= listaPaises.size()) {
+		if (i < listaPaises.size()) {
 			while (j < listaPaises.get(i).Regioes.size() && nomeR.compareTo(listaPaises.get(i).Regioes.get(j).getNome()) != 0 ) {
 				j++;
 			}
-			if(j <= listaPaises.get(i).Regioes.size()) {
+			if(j < listaPaises.get(i).Regioes.size()) {
 				if(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.isEmpty()) {
 					listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.add(newProd);
 				}else {
@@ -103,15 +103,15 @@ public class Gerir {
 		while (i < listaPaises.size() &&   nomeP.compareTo(listaPaises.get(i).getNome()) != 0) {
 			i++;
 		}
-		if (i <= listaPaises.size()) {
+		if (i < listaPaises.size()) {
 			while (j < listaPaises.get(i).Regioes.size() &&   nomeR.compareTo(listaPaises.get(i).Regioes.get(j).getNome()) != 0 ) {
 				j++;
 			}
-			if(j <= listaPaises.get(i).Regioes.size()) {
+			if(j < listaPaises.get(i).Regioes.size()) {
 				while(k < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size() && nomeProd.compareTo(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).getNome()) != 0) {
 					k++;
 				}
-				if (k <= listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
+				if (k < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
 					if(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Lojas.isEmpty()) {
 						listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Lojas.add(newLoja);
 					}else {
@@ -147,15 +147,15 @@ public class Gerir {
 		while (i < listaPaises.size() &&  nomeP.compareTo(listaPaises.get(i).getNome()) != 0) {
 			i++;
 		}
-		if (i <= listaPaises.size()) {
+		if (i < listaPaises.size()) {
 			while (j < listaPaises.get(i).Regioes.size() &&  nomeR.compareTo(listaPaises.get(i).Regioes.get(j).getNome()) != 0 ) {
 				j++;
 			}
-			if(j <= listaPaises.get(i).Regioes.size()) {
+			if(j < listaPaises.get(i).Regioes.size()) {
 				while(k < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size() && nomeProd.compareTo(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).getNome()) != 0) {
 					k++;
 				}
-				if (k <= listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
+				if (k < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
 					if(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Receitas.isEmpty()) {
 						listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Receitas.add(newReceita);
 					}else {
@@ -188,15 +188,15 @@ public class Gerir {
 		while (i < listaPaises.size() && nomeP.compareTo(listaPaises.get(i).getNome()) != 0) {
 			i++;
 		}
-		if (i <= listaPaises.size()) {
+		if (i < listaPaises.size()) {
 			while (j < listaPaises.get(i).Regioes.size() && nomeR.compareTo(listaPaises.get(i).Regioes.get(j).getNome()) != 0) {
 				j++;
 			}
-			if(j <= listaPaises.get(i).Regioes.size()) {
+			if(j < listaPaises.get(i).Regioes.size()) {
 				while(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size() && nomeProd.compareTo(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).getNome()) != 0 ) {
 					x++;
 				}
-				if(x <= listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
+				if(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
 					 listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).setNome(newNome);
 					 listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).setDescrição(newDesc);
 					 listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).setModoConfecao(newConf);
