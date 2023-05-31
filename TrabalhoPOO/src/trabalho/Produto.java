@@ -2,20 +2,18 @@ package trabalho;
 
 import java.util.ArrayList;
 
-public class Produtos {
+public class Produto {
 	String Nome; 
 	String Descricao; 
-	ArrayList<Receitas> Receitas;
-	ArrayList<Lojas> Lojas;
-	String ModoConfecao;
+	ArrayList<Ingrediente> ingredientes;
+	ArrayList<Loja> Lojas;
 	String Associacoes;
-	public Produtos(String nome, String descrição,String modoConfecao,String associacoes) {
+	public Produto(String nome, String descrição, String associacoes) {
 		
 		Nome = nome;
 		Descricao = descrição;
-		Receitas = new ArrayList<Receitas>(20);
-		Lojas = new ArrayList<Lojas>(20);
-		ModoConfecao = modoConfecao;
+		ingredientes = new ArrayList<Ingrediente>(20);
+		Lojas = new ArrayList<Loja>(20);
 		Associacoes = associacoes;
 	}
 	
@@ -31,25 +29,19 @@ public class Produtos {
 	public void setDescrição(String descrição) {
 		Descricao = descrição;
 	}
-	public ArrayList<Receitas> getReceitas() {
-		return Receitas;
+	public ArrayList<Ingrediente> getingredientes() {
+		return ingredientes;
 	}
-	public void setReceitas(ArrayList<Receitas> receitas) {
-		Receitas = receitas;
+	public void adicionarIngrediente (Ingrediente i) {//setingredientes(ArrayList<Ingrediente> ingredientes) {
+		ingredientes.add(i);
 	}
-	public ArrayList<Lojas> getLojas() {
+	public ArrayList<Loja> getLojas() {
 		return Lojas;
 	}
-	public void setLojas(ArrayList<Lojas> lojas) {
+	public void setLojas(ArrayList<Loja> lojas) {
 		Lojas = lojas;
 	}
-	public String getModoConfecao() {
-		return ModoConfecao;
-	}
-	public void setModoConfecao(String modoConfecao) {
-		ModoConfecao = modoConfecao;
-	}
-
+	
 	public String getAssociacoes() {
 		return Associacoes;
 	}
@@ -60,7 +52,7 @@ public class Produtos {
 
 	@Override
 	public String toString() {
-		return "Produtos [Nome= " + Nome + " , Descricao= " + Descricao + " , Receitas= " + Receitas + " , Lojas= " + Lojas + " , ModoConfecao= " + ModoConfecao + " , Associacao= " + Associacoes+ " ]";
+		return "Produtos [Nome= " + Nome + " , Descricao= " + Descricao + " , ingredientes= " + ingredientes + " , Lojas= " + Lojas + " , Associacao= " + Associacoes+ " ]";
 	} 
 	
 	

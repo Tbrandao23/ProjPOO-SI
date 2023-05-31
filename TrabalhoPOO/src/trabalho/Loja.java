@@ -3,7 +3,7 @@ package trabalho;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class Lojas {
+public class Loja {
 	String Nome;
 	String Descricao; 
 	String Morada; 
@@ -11,7 +11,7 @@ public class Lojas {
 	LocalTime HorarioAbertura;
 	LocalTime HorarioFecho; 
 	
-	public Lojas(String nome, String descrição, String morada, String dias,LocalTime HA, LocalTime HF) {
+	public Loja(String nome, String descrição, String morada, String dias,LocalTime HA, LocalTime HF) {
 	
 		Nome = nome;
 		Descricao = descrição;

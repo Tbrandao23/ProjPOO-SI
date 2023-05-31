@@ -2,20 +2,20 @@ package trabalho;
 
 import java.util.ArrayList;
 
-public class Paises {
+public class Pais {
 	
 	String Nome;
 	String Descricao;
-	ArrayList<Regioes> Regioes ;
+	ArrayList<Regiao> Regioes ;
 	
 	
 	
 	
-	public Paises(String nome, String descrição) {
+	public Pais(String nome, String descrição) {
 		
 		Nome = nome;
 		Descricao = descrição;
-		Regioes = new ArrayList<Regioes>(20);
+		Regioes = new ArrayList<Regiao>(20);
 	}
 	
 	public String getNome() {
@@ -30,10 +30,10 @@ public class Paises {
 	public void setDescricao(String descrição) {
 		Descricao = descrição;
 	}
-	public ArrayList<Regioes> getRegioes() {
+	public ArrayList<Regiao> getRegioes() {
 		return Regioes;
 	}
-	public void setRegioes(ArrayList<Regioes> regioes) {
+	public void setRegioes(ArrayList<Regiao> regioes) {
 		Regioes = regioes;
 	}
 

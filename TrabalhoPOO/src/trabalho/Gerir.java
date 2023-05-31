@@ -4,16 +4,16 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class Gerir {
-	ArrayList<Paises> listaPaises;
+	ArrayList<Pais> listaPaises;
 	
 	public Gerir() {
 	
-		listaPaises = new ArrayList<Paises> (20);
+		listaPaises = new ArrayList<Pais> (20);
 	}
 
 
 	public void adicionarPais (String nome,String Regiao) {
-		Paises newPais = new Paises (nome,Regiao);
+		Pais newPais = new Pais (nome,Regiao);
 		int i = 0;
 		if(listaPaises.isEmpty()) {
 			listaPaises.add(newPais);
@@ -32,7 +32,7 @@ public class Gerir {
 	}
 	
 	public void adicionarRegiao(String nome,String desc, String nomeP) {
-		Regioes newReg = new Regioes(nome,desc);
+		Regiao newReg = new Regiao(nome,desc);
 		int j = 0;
 		int i = 0;
 		while (i < listaPaises.size() && nomeP.compareTo(listaPaises.get(i).getNome()) != 0) {
@@ -59,8 +59,8 @@ public class Gerir {
 		}
 	}
 	
-	public void adicionarProduto(String nome,String desc,String conf,String ass, String nomeP,String nomeR) {
-		Produtos newProd = new Produtos(nome,desc, conf,ass);
+	public void adicionarProduto(String nome,String desc,String ass, String nomeP,String nomeR) {
+		Produto newProd = new Produto(nome, desc, ass);
 		int j = 0;
 		int i = 0;
 		int k = 0;
@@ -95,7 +95,7 @@ public class Gerir {
 	public void adicionarLoja (String nome, String desc,String morada,String dias,String HA,String HF,String nomeP,String nomeR, String nomeProd ) {
 		LocalTime HoraAbertura = LocalTime.parse(HA);
 		LocalTime HoraFecho = LocalTime.parse(HF);
-		Lojas newLoja = new Lojas (nome,desc,morada,dias,HoraAbertura,HoraFecho);
+		Loja newLoja = new Loja (nome,desc,morada,dias,HoraAbertura,HoraFecho);
 		int j = 0;
 		int i = 0;
 		int k = 0;
@@ -137,9 +137,9 @@ public class Gerir {
 			}
 		}
 	
-	public void adicionarReceita (String prod, String quant,String nomeP,String nomeR, String nomeProd ) {
+	public void adicionarReceita (String prod, String quant, String confe, String nomeP,String nomeR, String nomeProd ) {
 		int quantidade = Integer.parseInt(quant);
-		Receitas newReceita = new Receitas (prod,quantidade);
+		Ingrediente newReceita = new Ingrediente (prod,quantidade,confe);
 		int j = 0;
 		int i = 0;
 		int k = 0;
@@ -156,14 +156,14 @@ public class Gerir {
 					k++;
 				}
 				if (k < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
-					if(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Receitas.isEmpty()) {
-						listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Receitas.add(newReceita);
+					if(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).ingredientes.isEmpty()) {
+						listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).ingredientes.add(newReceita);
 					}else {
-						while(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Receitas.size() && prod.compareTo(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Receitas.get(x).getProduto()) != 0) {
+						while(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).ingredientes.size() && prod.compareTo(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Receitas.get(x).getProduto()) != 0) {
 							x++;
 						}
-						if(x >= listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Receitas.size()) {
-							listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Receitas.add(newReceita);
+						if(x >= listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).ingredientes.size()) {
+							listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).ingredientes.add(newReceita);
 						}else {
 							System.out.println("Produto ja existe. " + prod);
 						}
@@ -181,7 +181,7 @@ public class Gerir {
 			}
 		}
 	
-	public void atualizarProd (String nomeP,String nomeR, String nomeProd,String newNome,String newDesc,String newConf,String newAss) {
+	public void atualizarProd (String nomeP,String nomeR, String nomeProd,String newNome,String newDesc,String newAss) {
 		int i = 0;
 		int j = 0;
 		int x = 0;
@@ -199,7 +199,6 @@ public class Gerir {
 				if(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
 					 listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).setNome(newNome);
 					 listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).setDescrição(newDesc);
-					 listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).setModoConfecao(newConf);
 					 listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).setAssociacoes(newAss);
 				}else {
 					System.out.println("Produto nao existe.");

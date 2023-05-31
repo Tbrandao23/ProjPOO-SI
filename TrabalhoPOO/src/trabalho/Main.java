@@ -64,10 +64,8 @@ public class Main {
 	             case 3:
 	             	System.out.println("Nome do produto a adicionar: ");
 	                 String nomeProd = input.nextLine();
-	                 System.out.println("Descricao do produto em questao: ");
+	                 System.out.println("Historia do produto em questao: ");
 	                 String descProd = input.nextLine();
-	                 System.out.println("Confecao/Receita do produto: ");
-	                 String confe = input.nextLine();
 	                 System.out.println("Nome da associacao ao qual o produto pertence: ");
 	                 String asso = input.nextLine();
 	                 System.out.println("Nome da regiao ao qual o produto pertence: ");
@@ -75,7 +73,7 @@ public class Main {
 	                 System.out.println("Nome do pais ao qual o produto pertence: ");
 	                 String prodPais = input.nextLine();
 	                 input.nextLine();
-	                 Gestor.adicionarProduto(nomeProd, descProd, confe, asso,prodPais ,prodReg);
+	                 Gestor.adicionarProduto(nomeProd, descProd, asso,prodPais ,prodReg);
 	                 break;
 	                 
 	             case 4:
@@ -102,10 +100,13 @@ public class Main {
 	             	break;
 	             	
 	             case 5:
-	             	System.out.println("Nome do produto a adicionar na receita: ");
+	    
+	             	 System.out.println("Nome do produto a adicionar na receita: ");
 	                 String nomeProdRec = input.nextLine();
 	                 System.out.println("Quantidade do produto em questao: ");
 	                 String recQuant = input.nextLine();
+	                 System.out.println("Confecao do produto: ");
+	                 String confe = input.nextLine();
 	                 System.out.println("Nome do pais ao qual a receita pertence: ");
 	                 String pNome = input.nextLine();
 	                 System.out.println("Nome da regiao ao qual a receita pertence: ");
@@ -113,8 +114,8 @@ public class Main {
 	                 System.out.println("Nome do produto ao qual a receita pertence: ");
 	                 String prodNom = input.nextLine();
 	                 input.nextLine();
-	                 Gestor.adicionarReceita(nomeProdRec, recQuant, pNome, rNome, prodNom);
-	             	break;
+	                 Gestor.adicionarReceita(nomeProdRec, recQuant, confe, pNome, rNome, prodNom);
+	             	 break;
 	             	
 	             case 6:
 	             	System.out.println("Nome do pais ao qual o produto a atualizar pertence: ");
@@ -127,12 +128,10 @@ public class Main {
 	                 String newNome = input.nextLine();
 	                 System.out.println("Nova descricao do produto: ");
 	                 String newDesc = input.nextLine();
-	                 System.out.println("Nova confecao/receita do produto: ");
-	                 String newConf = input.nextLine();
 	                 System.out.println("Nova associacao do produto: ");
 	                 String newAss = input.nextLine();
 	                 input.nextLine();
-	             	 Gestor.atualizarProd(nomeP, nomeR, nomeProdu, newNome, newDesc, newConf, newAss);
+	             	 Gestor.atualizarProd(nomeP, nomeR, nomeProdu, newNome, newDesc, newAss);
 	             	break;
 	         
 					case 7:
