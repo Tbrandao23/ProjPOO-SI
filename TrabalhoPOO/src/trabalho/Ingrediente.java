@@ -1,13 +1,15 @@
 package trabalho;
 
-public class Receitas {
+public class Ingrediente {
 	String Produto;
 	int Quantidade;
+	String ModoConfecao;
 	
-	public Receitas(String produto,int quantidade) {
+	public Ingrediente(String produto,int quantidade, String modoConfecao) {
 		
 		Produto = produto;
 		Quantidade = quantidade;
+		ModoConfecao = modoConfecao;
 	}
 
 	public String getProduto() {
@@ -26,9 +28,17 @@ public class Receitas {
 		Quantidade = quantidade;
 	}
 
+	public String getModoConfecao() {
+		return ModoConfecao;
+	}
+	public void setModoConfecao(String modoConfecao) {
+		ModoConfecao = modoConfecao;
+	}
+
+	
 	@Override
 	public String toString() {
-		return "Receitas [Produto=" + Produto + ", Quantidade=" + Quantidade + "]";
+		return "Receitas [Produto=" + Produto + ", Quantidade=" + Quantidade + " , ModoConfecao= " + ModoConfecao + "]";
 	}
 	
 	
