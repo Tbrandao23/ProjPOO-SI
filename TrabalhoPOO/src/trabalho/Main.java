@@ -12,41 +12,30 @@ public class Main {
 		int op = -1;
 		
 		while(op!=0){
-				System.out.println("Escolha uma opcao: ");
-				System.out.println("1. Adicionar Pais ");
-				System.out.println("2. Adicionar Regiao ");
-				System.out.println("3. Adicionar Produto ");
-				System.out.println("4. Adicionar Loja ");
-				System.out.println("5. Adicionar Receita ");
-				System.out.println("6. Atualizar Produto ");
-				System.out.println("7. Imprimir Países");
-				System.out.println("0. Sair ");
-				System.out.print("Opcao: ");
-				op = input.nextInt();
-				input.nextLine();
-				
-				if (op < 0 || op > 7) {
-					System.out.println("Escolha uma opcao: ");
-					System.out.println("1. Adicionar Pais ");
-					System.out.println("2. Adicionar Regiao ");
-					System.out.println("3. Adicionar Produto ");
-					System.out.println("4. Adicionar Loja ");
-					System.out.println("5. Adicionar Receita ");
-					System.out.println("6. Atualizar Produto ");
-					System.out.println("7. Imprimir Países");
-					System.out.println("0. Sair ");
-					System.out.print("Opcao: ");
-					op = input.nextInt();
-					input.nextLine();
+				try {
+					op = menu(input);
 					
+					if (op < 0 || op > 7) {
+						op = menu(input);
+						
+					}
+				} catch (Exception e) {
+					System.out.println("Opcao invalida!\n");
+					input = new Scanner(System.in);
+					op = menu(input);
+					
+					if (op < 0 || op > 7) {
+						op = menu(input);
+						
+					}
 				}
+				
 				switch(op){
 				 case 1: 
 	                 System.out.println("Nome do Pais a adicionar: ");
 	                 String nomePais = input.nextLine();
 	                 System.out.println("Descricao do Pais em questao:  ");
 	                 String nomeRegiao = input.nextLine();
-	                 input.nextLine();
 	                 Gestor.adicionarPais(nomePais, nomeRegiao);
 	                 break;
 	                 
@@ -57,7 +46,6 @@ public class Main {
 	                 String descri = input.nextLine();
 	                 System.out.println("Nome do pais ao qual a regiao pertence: ");
 	                 String paisNome = input.nextLine();
-	                 input.nextLine();
 	                 Gestor.adicionarRegiao(nomeReg, descri, paisNome);
 	                 break;
 	             
@@ -72,7 +60,6 @@ public class Main {
 	                 String prodReg = input.nextLine();
 	                 System.out.println("Nome do pais ao qual o produto pertence: ");
 	                 String prodPais = input.nextLine();
-	                 input.nextLine();
 	                 Gestor.adicionarProduto(nomeProd, descProd, asso,prodPais ,prodReg);
 	                 break;
 	                 
@@ -95,7 +82,6 @@ public class Main {
 	                 String lojaNomer = input.nextLine();
 	                 System.out.println("Nome do produto da loja: ");
 	                 String lojanomeProd = input.nextLine();
-	                 input.nextLine();
 	                 Gestor.adicionarLoja(nomeLoja, descLoja, lojaMor, diasLoja, haLoja, hfLoja, lojaNomep, lojaNomer, lojanomeProd);
 	             	break;
 	             	
@@ -113,7 +99,6 @@ public class Main {
 	                 String rNome = input.nextLine();
 	                 System.out.println("Nome do produto ao qual a receita pertence: ");
 	                 String prodNom = input.nextLine();
-	                 input.nextLine();
 	                 Gestor.adicionarReceita(nomeProdRec, recQuant, confe, pNome, rNome, prodNom);
 	             	 break;
 	             	
@@ -130,7 +115,6 @@ public class Main {
 	                 String newDesc = input.nextLine();
 	                 System.out.println("Nova associacao do produto: ");
 	                 String newAss = input.nextLine();
-	                 input.nextLine();
 	             	 Gestor.atualizarProd(nomeP, nomeR, nomeProdu, newNome, newDesc, newAss);
 	             	break;
 	         
@@ -142,6 +126,23 @@ public class Main {
 						break;
 			}
 		}
+	}
+
+	private static int menu(Scanner input) {
+		int op;
+		System.out.println("Escolha uma opcao: ");
+		System.out.println("1. Adicionar Pais ");
+		System.out.println("2. Adicionar Regiao ");
+		System.out.println("3. Adicionar Produto ");
+		System.out.println("4. Adicionar Loja ");
+		System.out.println("5. Adicionar Receita ");
+		System.out.println("6. Atualizar Produto ");
+		System.out.println("7. Imprimir Países");
+		System.out.println("0. Sair ");
+		System.out.print("Opcao: ");
+		op = input.nextInt();
+		input.nextLine();
+		return op;
 	}
 }
 

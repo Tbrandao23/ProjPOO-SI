@@ -159,7 +159,7 @@ public class Gerir {
 					if(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).ingredientes.isEmpty()) {
 						listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).ingredientes.add(newReceita);
 					}else {
-						while(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).ingredientes.size() && prod.compareTo(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).Receitas.get(x).getProduto()) != 0) {
+						while(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).ingredientes.size() && prod.compareTo(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).ingredientes.get(x).getProduto()) != 0) {
 							x++;
 						}
 						if(x >= listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).ingredientes.size()) {
