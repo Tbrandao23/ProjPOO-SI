@@ -137,8 +137,8 @@ public class Gerir {
 			}
 		}
 	
-	public void adicionarReceita (String confe, String nomeP,String nomeR, String nomeProd ) {
-		Receita newReceita = new Receita (confe);
+	public void adicionarReceita (String confe,ArrayList<Ingrediente> ings, String nomeP,String nomeR, String nomeProd ) {
+		Receita newReceita = new Receita (confe,ings);
 		int j = 0;
 		int i = 0;
 		int k = 0;

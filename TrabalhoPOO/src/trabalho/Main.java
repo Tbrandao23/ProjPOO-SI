@@ -1,9 +1,11 @@
 package trabalho;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+	ArrayList<Ingrediente> ings = new ArrayList<Ingrediente>();
 	public static void main(String[] args) {
 		
 		Gerir Gestor = new Gerir();
@@ -87,10 +89,19 @@ public class Main {
 	             	
 	             case 5:
 	            	 
-	             	 System.out.println("Nome do produto a adicionar na receita: ");
-	                 String nomeProdRec = input.nextLine();
-	                 System.out.println("Quantidade do produto em questao: ");
-	                 String recQuant = input.nextLine();
+	            	 System.out.println("Quantos ingredientes tem a receita ? ");
+	            	 int num = input.nextInt(); 
+	            	 ArrayList<Ingrediente> ings2= new ArrayList<Ingrediente>(num);
+	            	 for (int i = 0;i < num;i++) {
+	            		 System.out.println("Nome do produto a adicionar na receita: ");
+		                 String nomeProdRec = input.nextLine();
+		                 System.out.println("Quantidade do produto em questao: ");
+		                 int Quant = input.nextInt();
+		                 Ingrediente ing = new Ingrediente(nomeProdRec,Quant);
+		                 ings2.add(ing);
+		                
+	            	 }
+	             	 
 	                 System.out.println("Confecao do produto: ");
 	                 String confe = input.nextLine();
 	                 System.out.println("Nome do pais ao qual a receita pertence: ");
@@ -99,7 +110,7 @@ public class Main {
 	                 String rNome = input.nextLine();
 	                 System.out.println("Nome do produto ao qual a receita pertence: ");
 	                 String prodNom = input.nextLine();
-	                 Gestor.adicionarReceita(confe, pNome, rNome, prodNom);
+	                 Gestor.adicionarReceita(confe,ings2, pNome, rNome, prodNom);
 	             	 break;
 	             	
 	             case 6:

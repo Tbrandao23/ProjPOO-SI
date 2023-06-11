@@ -7,10 +7,10 @@ public class Receita {
 	ArrayList<Ingrediente> ingredientes;
 	
 	
-	public Receita(String modoConfecao) {
-		super();
+	public Receita(String modoConfecao,ArrayList<Ingrediente> ing) {
+
 		ModoConfecao = modoConfecao;
-		ingredientes = new ArrayList<Ingrediente>(100);
+		ingredientes = ing;
 	}
 
 
