@@ -78,7 +78,7 @@ public class Gerir {
 					while(k < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size() && nome.compareTo(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(k).getNome()) != 0) {
 						k++;
 					}
-					if(k > listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
+					if(k >= listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
 						listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.add(newProd);
 					}else {
 						System.out.println("Produto ja existe. " + nome);
@@ -210,4 +210,45 @@ public class Gerir {
 		}
 	}
 	
+	public void verProds (String nomeP, String nomeR) {
+		int i = 0;
+		int j = 0;
+		int z = 0; 
+		while (i < listaPaises.size() &&  nomeP.compareTo(listaPaises.get(i).getNome()) != 0) {
+			i++;
+		}
+		if (i <= listaPaises.size()) {
+			while (j <= listaPaises.get(i).Regioes.size() &&  nomeR.compareTo(listaPaises.get(i).Regioes.get(j).getNome()) != 0 ) {
+				j++;
+			}
+			if(j <= listaPaises.get(i).Regioes.size()) {
+				for (z = 0; z <  listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size();z++) {
+					System.out.println(z+1 + "- " + listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(z).getNome());
+				}
+			}
+		}
+	}
+	
+	public void verHistProd (String nomeP,String nomeR, String nomeProd) {
+		int i = 0;
+		int j = 0;
+		int x = 0;
+		while (i < listaPaises.size() && nomeP.compareTo(listaPaises.get(i).getNome()) != 0) {
+			i++;
+		}
+		if (i < listaPaises.size()) {
+			while (j < listaPaises.get(i).Regioes.size() && nomeR.compareTo(listaPaises.get(i).Regioes.get(j).getNome()) != 0) {
+				j++;
+			}
+			if(j < listaPaises.get(i).Regioes.size()) {
+				while(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size() && nomeProd.compareTo(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).getNome()) != 0 ) {
+					x++;
+				}
+				if(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
+					 System.out.println(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).getDescricao());
+				}
+	}
 }
+	}
+}
+

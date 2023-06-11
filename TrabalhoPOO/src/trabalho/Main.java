@@ -11,33 +11,34 @@ public class Main {
 		Gerir Gestor = new Gerir();
 		Scanner input = new Scanner(System.in);
 		int log = login(input);
-		int op = -1;
+		int op1 = -1;
+		int op2 = -1;
 		while(log != 0) {
 			
 					
 			switch (log) {
 			
 			case 1:
-				while(op!=0){
+				while(op1!=0){
 					try {
-						op = menu(input);
+						op1 = menuA(input);
 						
-						if (op < 0 || op > 7) {
-							op = menu(input);
+						if (op1 < 0 || op1 > 7) {
+							op1 = menuA(input);
 							
 						}
 					} catch (Exception e) {
 						System.out.println("Opcao invalida!\n");
 						input = new Scanner(System.in);
-						op = menu(input);
+						op1 = menuA(input);
 						
-						if (op < 0 || op > 7) {
-							op = menu(input);
+						if (op1 < 0 || op1 > 7) {
+							op1 = menuA(input);
 							
 						}
 					}
 					
-					switch(op){
+					switch(op1){
 					 case 1: 
 		                 System.out.println("Nome do Pais a adicionar: ");
 		                 String nomePais = input.nextLine();
@@ -143,9 +144,73 @@ public class Main {
 
 							break;
 				}
+				
 			}
+				break;	
 			case 2 :
+				op2 = menuT(input);
+				while (op2 != 0) {
+					switch(op2){
+					case 1:
+						
+						System.out.println("Paises Existentes: ");
+						for (int i = 0;i < Gestor.listaPaises.size();i++) {
+							System.out.println("- " + Gestor.listaPaises.get(i).getNome());
+						}
+						System.out.println("Nome do pais ao qual o produto pertence: ");
+		                String prodPais = input.nextLine();
+		                
+						
+						System.out.println("Regioes Existentes: ");
+						for (int i = 0;i < Gestor.listaPaises.size();i++) {
+							for (int j = 0;j < Gestor.listaPaises.get(i).Regioes.size();j++) {
+								System.out.println("- " + Gestor.listaPaises.get(i).Regioes.get(j).getNome());
+							}
+						}
+						System.out.println("Nome da regiao ao qual o produto pertence: ");
+		                String prodReg = input.nextLine();
+		                Gestor.verProds(prodPais, prodReg);
+						break;
+					case 2:
+						System.out.println("Paises Existentes: ");
+						for (int i = 0;i < Gestor.listaPaises.size();i++) {
+							System.out.println("- " + Gestor.listaPaises.get(i).getNome());
+						}
+						System.out.println("Nome do pais ao qual o produto pertence: ");
+		                String pais = input.nextLine();
+		                
+						
+						System.out.println("Regioes Existentes: ");
+						for (int i = 0;i < Gestor.listaPaises.size();i++) {
+							for (int j = 0;j < Gestor.listaPaises.get(i).Regioes.size();j++) {
+								System.out.println("- " + Gestor.listaPaises.get(i).Regioes.get(j).getNome());
+							}
+						}
+						System.out.println("Nome da regiao ao qual o produto pertence: ");
+		                String reg = input.nextLine();
+		                System.out.println("Produtos Existentes na Regiao: ");
+						for (int i = 0;i < Gestor.listaPaises.size();i++) {
+							for (int j = 0;j < Gestor.listaPaises.get(i).Regioes.size();j++) {
+								for (int z = 0;z < Gestor.listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size();z++) {
+									System.out.println("- " + Gestor.listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(z).getNome());
+								}
+								
+							}
+						}
+						System.out.println("Nome do produto : ");
+		                String prod = input.nextLine();
+		                Gestor.verHistProd(pais, reg, prod);
+						break;
+					case 3: 
+						break;
+					case 4:
+						break;
+				}
+					op2 = menuT(input);
+				}
 				break;
+				
+				
 			case 3 : 
 				break;
 			}
@@ -168,7 +233,7 @@ public class Main {
 		return log;
 	}
 	
-	private static int menu(Scanner input) {
+	private static int menuA(Scanner input) {
 		int op;
 		System.out.println("Escolha uma opcao: ");
 		System.out.println("1. Adicionar Pais ");
@@ -178,6 +243,17 @@ public class Main {
 		System.out.println("5. Adicionar Receita ");
 		System.out.println("6. Atualizar Produto ");
 		System.out.println("7. Imprimir Países");
+		System.out.println("0. Sair ");
+		System.out.print("Opcao: ");
+		op = input.nextInt();
+		input.nextLine();
+		return op;
+
+	}
+	private static int menuT(Scanner input) {
+		int op;
+		System.out.println("Escolha uma opcao: ");
+		System.out.println("1. Ver Produtos da Regiao ");
 		System.out.println("0. Sair ");
 		System.out.print("Opcao: ");
 		op = input.nextInt();
