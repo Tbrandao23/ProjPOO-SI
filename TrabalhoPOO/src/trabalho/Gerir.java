@@ -293,6 +293,29 @@ public class Gerir {
 	}
 }
 }
+	public void verPais () {
+		int z = 0; 
+		if(listaPaises.isEmpty() == false) {
+			for (z = 0; z <  listaPaises.size();z++) {
+				System.out.println(z+1 + "- " + listaPaises.get(z).getNome() + " , Descricao =" + listaPaises.get(z).getDescricao());
+			}
+		}else {
+			System.out.println("Nao Existem Paises");
+		}
+		
+	}
+	public void verRegioes (String nomeP) {
+		int i = 0;
+		int j = 0;
+		while (i < listaPaises.size() &&  nomeP.compareTo(listaPaises.get(i).getNome()) != 0) {
+			i++;
+		}
+		if (i <= listaPaises.size()) {
+			for (j= 0; j <  listaPaises.get(i).Regioes.size();j++) {
+				System.out.println(j+1 + "- " + listaPaises.get(i).Regioes.get(j).getNome() + " , Descricao =" + listaPaises.get(i).Regioes.get(j).getDescricao());
+			}
+			}
+	}
 }
 
 

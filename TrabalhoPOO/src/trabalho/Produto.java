@@ -54,7 +54,9 @@ public class Produto {
 	public double getAvaliacao() {
 		return avaliacao;
 	}
+	
 	public void setAvaliacao(double avaliacao) {
+		
 		this.avaliacao = avaliacao;
 	}
 	@Override

@@ -171,7 +171,7 @@ public class Main {
 						try {
 							op2 = menuT(input);
 							
-							if (op2 < 0 || op2 > 4) {
+							if (op2 < 0 || op2 > 6) {
 								op2 = menuT(input);
 								
 							}
@@ -180,7 +180,7 @@ public class Main {
 							input = new Scanner(System.in);
 							op2 = menuT(input);
 							
-							if (op2 < 0 || op2 > 4) {
+							if (op2 < 0 || op2 > 6) {
 								op1 = menuT(input);
 								
 							}
@@ -305,6 +305,18 @@ public class Main {
 		                }
 		                Gestor.avaliarProd(pais2, reg2, prod2, aval);
 						break;
+					case 5:
+						Gestor.verPais();
+						break;
+					case 6:
+						System.out.println("Paises Existentes: ");
+						for (int i = 0;i < Gestor.listaPaises.size();i++) {
+							System.out.println("- " + Gestor.listaPaises.get(i).getNome());
+						}
+						System.out.println("Nome do pais ao qual o produto pertence: ");
+		                String pais3 = input.nextLine();
+		                Gestor.verRegioes(pais3);
+						break;
 				}
 
 				}
@@ -351,6 +363,8 @@ public class Main {
 		System.out.println("2. Ver Historia do Produto Selecionado");
 		System.out.println("3. Ver Lojas/Restaurantes que vendem o Produto Selecionado");
 		System.out.println("4. Avaliar o Produto Selecionado");
+		System.out.println("5. Ver Paises Existentes ");
+		System.out.println("6. Ver Regioes Existentes nos Pais Selecionado");
 		System.out.println("0. Sair ");
 		System.out.print("Opcao: ");
 		op = input.nextInt();
