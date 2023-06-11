@@ -218,7 +218,7 @@ public class Gerir {
 			i++;
 		}
 		if (i <= listaPaises.size()) {
-			while (j <= listaPaises.get(i).Regioes.size() &&  nomeR.compareTo(listaPaises.get(i).Regioes.get(j).getNome()) != 0 ) {
+			while (j < listaPaises.get(i).Regioes.size() &&  nomeR.compareTo(listaPaises.get(i).Regioes.get(j).getNome()) != 0 ) {
 				j++;
 			}
 			if(j <= listaPaises.get(i).Regioes.size()) {
@@ -236,11 +236,11 @@ public class Gerir {
 		while (i < listaPaises.size() && nomeP.compareTo(listaPaises.get(i).getNome()) != 0) {
 			i++;
 		}
-		if (i < listaPaises.size()) {
+		if (i <= listaPaises.size()) {
 			while (j < listaPaises.get(i).Regioes.size() && nomeR.compareTo(listaPaises.get(i).Regioes.get(j).getNome()) != 0) {
 				j++;
 			}
-			if(j < listaPaises.get(i).Regioes.size()) {
+			if(j <= listaPaises.get(i).Regioes.size()) {
 				while(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size() && nomeProd.compareTo(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).getNome()) != 0 ) {
 					x++;
 				}
@@ -249,6 +249,28 @@ public class Gerir {
 				}
 	}
 }
+}
+	public void verLojas (String nomeP,String nomeR, String nomeProd) {
+		int i = 0;
+		int j = 0;
+		int x = 0;
+		while (i < listaPaises.size() && nomeP.compareTo(listaPaises.get(i).getNome()) != 0) {
+			i++;
+		}
+		if (i <= listaPaises.size()) {
+			while (j < listaPaises.get(i).Regioes.size() && nomeR.compareTo(listaPaises.get(i).Regioes.get(j).getNome()) != 0) {
+				j++;
+			}
+			if(j <= listaPaises.get(i).Regioes.size()) {
+				while(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size() && nomeProd.compareTo(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).getNome()) != 0 ) {
+					x++;
+				}
+				if(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
+					 System.out.println(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).getLojas());
+				}
 	}
 }
+}
+}
+
 

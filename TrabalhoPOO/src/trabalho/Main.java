@@ -10,11 +10,28 @@ public class Main {
 		
 		Gerir Gestor = new Gerir();
 		Scanner input = new Scanner(System.in);
-		int log = login(input);
+		int log = -1;
 		int op1 = -1;
 		int op2 = -1;
+		
 		while(log != 0) {
-			
+			try {
+				log = login(input);
+				
+				if (log < 0 || log > 2) {
+					log = login(input);
+					
+				}
+			} catch (Exception e) {
+				System.out.println("Opcao invalida!\n");
+				input = new Scanner(System.in);
+				log = login(input);
+				
+				if (log < 0 || log > 7) {
+					log = login(input);
+					
+				}
+			}
 					
 			switch (log) {
 			
@@ -148,8 +165,27 @@ public class Main {
 			}
 				break;	
 			case 2 :
-				op2 = menuT(input);
+				
 				while (op2 != 0) {
+					
+						try {
+							op2 = menuT(input);
+							
+							if (op2 < 0 || op2 > 4) {
+								op2 = menuT(input);
+								
+							}
+						} catch (Exception e) {
+							System.out.println("Opcao invalida!\n");
+							input = new Scanner(System.in);
+							op2 = menuT(input);
+							
+							if (op2 < 0 || op2 > 4) {
+								op1 = menuT(input);
+								
+							}
+						}
+					
 					switch(op2){
 					case 1:
 						
@@ -202,20 +238,43 @@ public class Main {
 		                Gestor.verHistProd(pais, reg, prod);
 						break;
 					case 3: 
+						System.out.println("Paises Existentes: ");
+						for (int i = 0;i < Gestor.listaPaises.size();i++) {
+							System.out.println("- " + Gestor.listaPaises.get(i).getNome());
+						}
+						System.out.println("Nome do pais ao qual o produto pertence: ");
+		                String pais1 = input.nextLine();
+		                
+						
+						System.out.println("Regioes Existentes: ");
+						for (int i = 0;i < Gestor.listaPaises.size();i++) {
+							for (int j = 0;j < Gestor.listaPaises.get(i).Regioes.size();j++) {
+								System.out.println("- " + Gestor.listaPaises.get(i).Regioes.get(j).getNome());
+							}
+						}
+						System.out.println("Nome da regiao ao qual o produto pertence: ");
+		                String reg1 = input.nextLine();
+		                System.out.println("Produtos Existentes na Regiao: ");
+						for (int i = 0;i < Gestor.listaPaises.size();i++) {
+							for (int j = 0;j < Gestor.listaPaises.get(i).Regioes.size();j++) {
+								for (int z = 0;z < Gestor.listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size();z++) {
+									System.out.println("- " + Gestor.listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(z).getNome());
+								}
+								
+							}
+						}
+						System.out.println("Nome do produto : ");
+		                String prod1 = input.nextLine();
+		                Gestor.verLojas(pais1, reg1, prod1);
 						break;
 					case 4:
 						break;
 				}
-					op2 = menuT(input);
+
 				}
-				break;
-				
-				
-			case 3 : 
 				break;
 			}
 			
-			log = login(input);
 				}
 	}
 	
@@ -225,7 +284,6 @@ public class Main {
 		System.out.println("Deseja Entrar Como: ");
 		System.out.println("1. Administrador ");
 		System.out.println("2. Turista ");
-		System.out.println("3. Residente ");
 		System.out.println("0. Sair ");
 		System.out.print("Opcao: ");
 		log = input.nextInt();
@@ -254,6 +312,9 @@ public class Main {
 		int op;
 		System.out.println("Escolha uma opcao: ");
 		System.out.println("1. Ver Produtos da Regiao ");
+		System.out.println("2. Ver Historia do Produto Selecionado");
+		System.out.println("3. Ver Lojas/Restaurantes que vendem o Produto Selecionado");
+		System.out.println("4. Avaliar o Produto Selecionado");
 		System.out.println("0. Sair ");
 		System.out.print("Opcao: ");
 		op = input.nextInt();
