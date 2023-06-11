@@ -30,7 +30,7 @@ public class Ingrediente {
 	
 	@Override
 	public String toString() {
-		return "Receitas [Produto=" + Produto + ", Quantidade=" + Quantidade + "]";
+		return "Ingrediente [Produto=" + Produto + ", Quantidade=" + Quantidade + "]";
 	}
 	
 	

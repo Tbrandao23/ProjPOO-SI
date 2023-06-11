@@ -90,14 +90,16 @@ public class Main {
 	             case 5:
 	            	 
 	            	 System.out.println("Quantos ingredientes tem a receita ? ");
-	            	 int num = input.nextInt(); 
+	            	 String numero = input.nextLine(); 
+	            	 int num = Integer.parseInt(numero);
 	            	 ArrayList<Ingrediente> ings2= new ArrayList<Ingrediente>(num);
 	            	 for (int i = 0;i < num;i++) {
 	            		 System.out.println("Nome do produto a adicionar na receita: ");
 		                 String nomeProdRec = input.nextLine();
 		                 System.out.println("Quantidade do produto em questao: ");
-		                 int Quant = input.nextInt();
-		                 Ingrediente ing = new Ingrediente(nomeProdRec,Quant);
+		                 String prodQuant = input.nextLine();
+		                 int quant = Integer.parseInt(prodQuant);
+		                 Ingrediente ing = new Ingrediente(nomeProdRec,quant);
 		                 ings2.add(ing);
 		                
 	            	 }
