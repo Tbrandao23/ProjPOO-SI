@@ -3,57 +3,55 @@ package trabalho;
 import java.util.ArrayList;
 
 public class Produto {
-	String Nome; 
-	String Descricao; 
-	ArrayList<Ingrediente> ingredientes;
-	ArrayList<Loja> Lojas;
-	String Associacoes;
-	public Produto(String nome, String descrição, String associacoes) {
+	String nome; 
+	String descricao; 
+	ArrayList<Receita> receitas;
+	ArrayList<Loja> lojas;
+	String associacoes;
+	public Produto(String nNome, String descrição, String nAssociacoes) {
 		
-		Nome = nome;
-		Descricao = descrição;
-		ingredientes = new ArrayList<Ingrediente>(20);
-		Lojas = new ArrayList<Loja>(20);
-		Associacoes = associacoes;
+		nome = nNome;
+		descricao = descrição;
+		receitas = new ArrayList<Receita>(20);
+		lojas = new ArrayList<Loja>(20);
+		associacoes = nAssociacoes;
 	}
-	
 	public String getNome() {
-		return Nome;
+		return nome;
 	}
 	public void setNome(String nome) {
-		Nome = nome;
+		this.nome = nome;
 	}
-	public String getDescrição() {
-		return Descricao;
+	public String getDescricao() {
+		return descricao;
 	}
-	public void setDescrição(String descrição) {
-		Descricao = descrição;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
-	public ArrayList<Ingrediente> getingredientes() {
-		return ingredientes;
+	public ArrayList<Receita> getReceitas() {
+		return receitas;
 	}
-	public void adicionarIngrediente (Ingrediente i) {//setingredientes(ArrayList<Ingrediente> ingredientes) {
-		ingredientes.add(i);
+	public void setReceitas(ArrayList<Receita> receitas) {
+		this.receitas = receitas;
 	}
 	public ArrayList<Loja> getLojas() {
-		return Lojas;
+		return lojas;
 	}
 	public void setLojas(ArrayList<Loja> lojas) {
-		Lojas = lojas;
+		this.lojas = lojas;
 	}
-	
 	public String getAssociacoes() {
-		return Associacoes;
+		return associacoes;
 	}
-
 	public void setAssociacoes(String associacoes) {
-		Associacoes = associacoes;
+		this.associacoes = associacoes;
 	}
-
 	@Override
 	public String toString() {
-		return "Produtos [Nome= " + Nome + " , Descricao= " + Descricao + " , ingredientes= " + ingredientes + " , Lojas= " + Lojas + " , Associacao= " + Associacoes+ " ]";
-	} 
+		return "Produto [nome=" + nome + ", descricao=" + descricao + ", receitas=" + receitas + ", lojas=" + lojas + ", associacoes=" + associacoes + "]";
+	}
+	
+	 
 	
 	
 }

@@ -86,7 +86,7 @@ public class Main {
 	             	break;
 	             	
 	             case 5:
-	    
+	            	 
 	             	 System.out.println("Nome do produto a adicionar na receita: ");
 	                 String nomeProdRec = input.nextLine();
 	                 System.out.println("Quantidade do produto em questao: ");
@@ -99,7 +99,7 @@ public class Main {
 	                 String rNome = input.nextLine();
 	                 System.out.println("Nome do produto ao qual a receita pertence: ");
 	                 String prodNom = input.nextLine();
-	                 Gestor.adicionarReceita(nomeProdRec, recQuant, confe, pNome, rNome, prodNom);
+	                 Gestor.adicionarReceita(confe, pNome, rNome, prodNom);
 	             	 break;
 	             	
 	             case 6:
