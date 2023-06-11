@@ -8,6 +8,8 @@ public class Produto {
 	ArrayList<Receita> receitas;
 	ArrayList<Loja> lojas;
 	String associacoes;
+	double avaliacao;
+	
 	public Produto(String nNome, String descrição, String nAssociacoes) {
 		
 		nome = nNome;
@@ -15,6 +17,7 @@ public class Produto {
 		receitas = new ArrayList<Receita>(20);
 		lojas = new ArrayList<Loja>(20);
 		associacoes = nAssociacoes;
+		avaliacao = 0;
 	}
 	public String getNome() {
 		return nome;
@@ -46,9 +49,17 @@ public class Produto {
 	public void setAssociacoes(String associacoes) {
 		this.associacoes = associacoes;
 	}
+	
+	
+	public double getAvaliacao() {
+		return avaliacao;
+	}
+	public void setAvaliacao(double avaliacao) {
+		this.avaliacao = avaliacao;
+	}
 	@Override
 	public String toString() {
-		return "Produto [Nome=" + nome + ", Descricao=" + descricao + ", Receitas=" + receitas + ", Lojas=" + lojas + ", Associacoes=" + associacoes + "]";
+		return "Produto [Nome=" + nome + ", Descricao=" + descricao + ", Receitas=" + receitas + ", Lojas=" + lojas + ", Associacoes=" + associacoes + ", Avaliacao= "+ avaliacao + "]";
 	}
 	
 	 

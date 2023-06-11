@@ -268,6 +268,42 @@ public class Main {
 		                Gestor.verLojas(pais1, reg1, prod1);
 						break;
 					case 4:
+						System.out.println("Paises Existentes: ");
+						for (int i = 0;i < Gestor.listaPaises.size();i++) {
+							System.out.println("- " + Gestor.listaPaises.get(i).getNome());
+						}
+						System.out.println("Nome do pais ao qual o produto pertence: ");
+		                String pais2 = input.nextLine();
+		                
+						
+						System.out.println("Regioes Existentes: ");
+						for (int i = 0;i < Gestor.listaPaises.size();i++) {
+							for (int j = 0;j < Gestor.listaPaises.get(i).Regioes.size();j++) {
+								System.out.println("- " + Gestor.listaPaises.get(i).Regioes.get(j).getNome());
+							}
+						}
+						System.out.println("Nome da regiao ao qual o produto pertence: ");
+		                String reg2 = input.nextLine();
+		                System.out.println("Produtos Existentes na Regiao: ");
+						for (int i = 0;i < Gestor.listaPaises.size();i++) {
+							for (int j = 0;j < Gestor.listaPaises.get(i).Regioes.size();j++) {
+								for (int z = 0;z < Gestor.listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size();z++) {
+									System.out.println("- " + Gestor.listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(z).getNome());
+								}
+								
+							}
+						}
+						System.out.println("Nome do produto : ");
+		                String prod2 = input.nextLine();
+		                System.out.println("Qual a avaliacao do produto : ");
+		                String avaliacao = input.nextLine();
+		                double aval = Double.parseDouble(avaliacao);
+		                while (aval < 0 || aval > 10) {
+		                	System.out.println("Qual a avaliacao do produto : ");
+		                	avaliacao = input.nextLine();
+			                aval = Double.parseDouble(avaliacao);
+		                }
+		                Gestor.avaliarProd(pais2, reg2, prod2, aval);
 						break;
 				}
 

@@ -223,7 +223,7 @@ public class Gerir {
 			}
 			if(j <= listaPaises.get(i).Regioes.size()) {
 				for (z = 0; z <  listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size();z++) {
-					System.out.println(z+1 + "- " + listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(z).getNome());
+					System.out.println(z+1 + "- " + listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(z).toString());
 				}
 			}
 		}
@@ -267,6 +267,28 @@ public class Gerir {
 				}
 				if(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
 					 System.out.println(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).getLojas());
+				}
+	}
+}
+}
+	public void avaliarProd (String nomeP,String nomeR, String nomeProd, double aval) {
+		int i = 0;
+		int j = 0;
+		int x = 0;
+		while (i < listaPaises.size() && nomeP.compareTo(listaPaises.get(i).getNome()) != 0) {
+			i++;
+		}
+		if (i <= listaPaises.size()) {
+			while (j < listaPaises.get(i).Regioes.size() && nomeR.compareTo(listaPaises.get(i).Regioes.get(j).getNome()) != 0) {
+				j++;
+			}
+			if(j <= listaPaises.get(i).Regioes.size()) {
+				while(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size() && nomeProd.compareTo(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).getNome()) != 0 ) {
+					x++;
+				}
+				if(x < listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.size()) {
+					listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).setAvaliacao(aval);
+					System.out.println(listaPaises.get(i).Regioes.get(j).Produtos_da_Regiao.get(x).getAvaliacao());
 				}
 	}
 }
