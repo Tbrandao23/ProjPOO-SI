@@ -95,11 +95,11 @@ public class Main {
 		                 String descLoja = input.nextLine();
 		                 System.out.println("Morada da loja: ");
 		                 String lojaMor = input.nextLine();
-		                 System.out.println("Dias em que a loja estará aberta(formato 09:00, Horas das 00-23): ");
+		                 System.out.println("Dias em que a loja estará aberta: ");
 		                 String diasLoja = input.nextLine();
 		                 System.out.println("Hora de abertura da loja(formato 09:00, Horas das 00-23): ");
 		                 String haLoja = input.nextLine();
-		                 System.out.println("Hora de fecho da loja: ");
+		                 System.out.println("Hora de fecho da loja (formato 09:00, Horas das 00-23): ");
 		                 String hfLoja = input.nextLine();
 		                 System.out.println("Nome do pais ao qual a loja pertence: ");
 		                 String lojaNomep = input.nextLine();
